@@ -6,15 +6,11 @@ package ru.OrenUrman.LinkStackClass;
  * Data - данные помещенные в элемент
  * next - ссылка на следующий элемент
  */
-class Link<E> {
-    public E Data;
-    public Link next;
+class Node<E> {
+    E Data;
+    Node next;
 
-    /**
-     *
-     * @param Data - данные, которые необходимо внести в стек
-     */
-    public Link(E Data) {
+    public Node(E Data) {
         this.Data = Data;
     }
 }

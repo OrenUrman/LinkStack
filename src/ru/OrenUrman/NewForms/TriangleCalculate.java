@@ -1,12 +1,11 @@
-package ru.OrenUrman.Forms;
+package ru.OrenUrman.NewForms;
+
 
 /**
  * Created by OrenUrman on 28.03.2017.
  * класс для треугольника
  */
-public class TriangleCalculate implements Calculate {
-    private double area;
-    private double perimeter;
+public class TriangleCalculate implements CalculateForms {
     private  double firstSide;
     private  double secondSide;
     private  double thirdSide;
@@ -19,27 +18,27 @@ public class TriangleCalculate implements Calculate {
     }
 
     @Override
-    public void perimeterForm() {
-        perimeter = firstSide + secondSide + thirdSide;
+    public double perimeterForm() {
+        return (firstSide + secondSide + thirdSide);
     }
 
     @Override
-    public void areaForm() {
+    public double areaForm() {
         double p = (firstSide + secondSide + thirdSide)/2;
         double S = p*(p-firstSide)*(p-secondSide)*(p-thirdSide);
-        area = Math.pow(S,0.5);
+        return (Math.pow(S, 0.5));
     }
 
+    @Override
+    public double[] calculateAll() {
+        double[] array = {perimeterForm(), areaForm()};
+        return array;
+    }
     @Override
     public String toString() {
         return "TriangleCalculate{" +
-                "area=" + area +
-                ", perimeter=" + perimeter +
+                "area=" + areaForm() +
+                ", perimeter=" + perimeterForm() +
                 '}';
-    }
-    @Override
-    public void calculate() {
-        perimeterForm();
-        areaForm();
     }
 }
