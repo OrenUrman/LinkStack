@@ -1,7 +1,7 @@
 package ru.OrenUrman.LinkStackClass;
 
 /**
- * Created by Пользователь on 01.04.2017.
+ * Created by OrenUrmanon 01.04.2017.
  */
 public class StackLink<E> {
     private Node<E> first;
